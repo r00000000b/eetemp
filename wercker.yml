@@ -20,6 +20,26 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
-    - arjen/hugo-build@1.13.1
-      theme: hugo-universal-theme
-      flags: --buildDrafts=true
+    - install-packages:
+        packages: unzip
+    - script:
+        name: echo
+        code: |
+          echo "Starting build"
+    - npm-install
+    - hgen/gulp:
+            tasks: build
+    - arjen/hugo-build:
+        version: 1.13.1
+        theme: hugo-universal-theme
+        flags: --buildDrafts=false
+
+deploy:
+  steps:
+      # Execute the s3sync deploy step, a step provided by wercker
+      - s3sync:
+          key_id: $AWS_ACCESS_KEY_ID
+          key_secret: $AWS_SECRET_ACCESS_KEY
+          bucket_url: $AWS_BUCKET_URL
+          source_dir: public/
+          delete-removed: true
