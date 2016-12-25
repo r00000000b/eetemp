@@ -29,10 +29,10 @@ build:
     # - npm-install
     # - hgen/gulp:
     #         tasks: build
-    - arjen/hugo-build@1.13.1
-        version: "HEAD"
+    - arjen/hugo-build:
+        version: "0.15"
         theme: hugo-universal-theme
-        # flags: --buildDrafts=false
+        flags: --buildDrafts=false
 
 deploy:
   steps:
