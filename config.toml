@@ -25,8 +25,8 @@ languageCode = "en-us"
     longitude = "114.131966"
 
 [[params.menu]]
-    name = "Home"
-    url  = "/"
+    name = "About"
+    url  = "/about/"
     weight = 1
 
 [[params.menu]]
