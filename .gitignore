@@ -1,2 +1,11 @@
 # Ignore environment settings
 .env
+
+!themes/
+!themes/*
+!themes/*/*
+!themes/*/*/*
+!themes/*/*/*/*
+!themes/*/*/*/*/*
+!themes/*/*/*/*/*/*
+!themes/*/*/*/*/*/*/*
