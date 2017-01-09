@@ -1,2 +1,4 @@
 # Ignore environment settings
 .env
+
+!themes/
